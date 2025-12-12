@@ -42,7 +42,7 @@
             export PGUSER="dbuser"
             export PGPASS="11223344"
 
-            if [[ $(ss -tuplen | grep $PGPORT) ]]; then
+            if [[ $(ss -ln | grep $PGPORT) ]]; then
                echo "Port '$PGPORT' is in use." && exit 1
             fi
 
